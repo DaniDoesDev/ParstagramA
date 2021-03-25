@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
@@ -43,6 +44,17 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     public int getItemCount() {
         return posts.size();
     }
+
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
